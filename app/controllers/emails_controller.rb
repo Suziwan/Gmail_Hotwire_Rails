@@ -1,6 +1,7 @@
 class EmailsController < ApplicationController
   def index
     @emails = Email.all
+    @email = Email.new
   end
 
   def show
@@ -17,8 +18,10 @@ class EmailsController < ApplicationController
     @email.save
 
     respond_to do |format|
-      format.html { redirect_to emails_path }
-      format.js { }
+      if @email.save
+        format.html { redirect_to emails_path }
+        format.js { }
+      end
     end
   end
 end

@@ -26,13 +26,13 @@
         <% @emails.each do |email| %>
           <a href="/emails/<%= email.id %>/" class="list-group-item list-group-item-action">
             <h5><%= email.object %></h5>
-            <%= email.body %><br>
+            <%= email.body.first(38)%>...<br>
           </a>
         <% end %>
       </div>
     </div>
     <div class="col-md-8 message-sideright">
-      <div class="list-group" data-turbo-frame=true>
+      <div class="list-group">
         <p> Select an email to see the content </p>
       </div>
     </div>
