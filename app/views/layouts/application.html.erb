@@ -14,7 +14,54 @@
     <%= javascript_importmap_tags %>
   </head>
 
+<style>
+.tab-content { 
+  padding-left: 50px; 
+  padding-right: 50px; 
+} 
+</style>
+
   <body>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body bg-primary text-white mailbox-widget pb-0">
+                        <h2 class="text-white pb-3">Your Mailbox</h2>
+                        <ul class="nav nav-tabs custom-tab border-bottom-0 mt-4" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="inbox-tab" data-toggle="tab" aria-controls="inbox" href="#inbox" role="tab" aria-selected="true">
+                                    <span class="d-block d-md-none"><i class="ti-email"></i></span>
+                                    <span class="d-none d-md-block"> INBOX</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="sent-tab" data-toggle="tab" aria-controls="sent" href="#sent" role="tab" aria-selected="false">
+                                    <span class="d-block d-md-none"><i class="ti-export"></i></span>
+                                    <span class="d-none d-md-block">SENT</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="spam-tab" data-toggle="tab" aria-controls="spam" href="#spam" role="tab" aria-selected="false">
+                                    <span class="d-block d-md-none"><i class="ti-panel"></i></span>
+                                    <span class="d-none d-md-block">SPAM</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="delete-tab" data-toggle="tab" aria-controls="delete" href="#delete" role="tab" aria-selected="false">
+                                    <span class="d-block d-md-none"><i class="ti-trash"></i></span>
+                                    <span class="d-none d-md-block">DELETED</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <%= yield %>
   </body>
 </html>
