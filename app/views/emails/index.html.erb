@@ -1,40 +1,42 @@
-<div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade active show" id="inbox" aria-labelledby="inbox-tab" role="tabpanel">
-        <div>
-            <div class="row p-4 no-gutters align-items-center">
-                <div class="col-sm-12 col-md-6">
-                    <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>350 Unread emails</h3>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <ul class="list-inline dl mb-0 float-left float-md-right">
-                        <li class="list-inline-item text-info mr-3">
-                          <%= button_to 'Receive email', emails_path, data: { 'turbo-link' => :post }, class: 'btn btn-success' %>
-                        </li>
-                        <li class="list-inline-item text-danger">
-                          <%= button_to 'Delete email', emails_path, data: { 'turbo-link' => :delete }, class: 'btn btn-danger'%>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-      <div class="row message-wrapper rounded mb-20">  
-        <div class="col-md-4 message-sideleft">
-          <div class="list-group" data-turbo-frame=true>
-            <% @emails.each do |email| %>
-              <a href="/emails/<%= email.id %>/" class="list-group-item list-group-item-action">
-                <h5><%= email.object %></h5>
-                <%= email.body %><br>
-              </a>
-            <% end %>
+<div class="container">
+  <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade active show" id="inbox" aria-labelledby="inbox-tab" role="tabpanel">
+          <div>
+              <div class="row p-4 no-gutters align-items-center">
+                  <div class="col-sm-12 col-md-6">
+                      <h3 class="font-light mb-0"><i class="ti-email mr-2"></i>10 Unread emails</h3>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                      <ul class="list-inline dl mb-0 float-left float-md-right">
+                          <li class="list-inline-item text-info mr-3">
+                            <%= button_to 'Receive email', emails_path, data: { 'turbo-link' => :post }, class: 'btn btn-success' %>
+                          </li>
+                          <li class="list-inline-item text-danger">
+                            <%= button_to 'Delete email', emails_path, data: { 'turbo-link' => :delete }, class: 'btn btn-danger'%>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="col-md-8 message-sideright">
-          <div class="list-group">
-            <p> Email content </p>
-          </div>
-        </div>
-      </div>  
+      </div>
     </div>
+  <div class="row message-wrapper rounded mb-20">  
+    <div class="col-md-4 message-sideleft">
+      <div class="list-group">
+        <% @emails.each do |email| %>
+          <a href="/emails/<%= email.id %>/" class="list-group-item list-group-item-action">
+            <h5><%= email.object %></h5>
+            <%= email.body %><br>
+          </a>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-8 message-sideright">
+      <div class="list-group" data-turbo-frame=true>
+        <p> Select an email to see the content </p>
+      </div>
+    </div>
+  </div>
+  <br>
 </div>
+

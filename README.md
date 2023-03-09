@@ -1,12 +1,12 @@
 # Gmail-like using Hotwire on Rails 7
 
-## Index
+## 1. Index
 
-## Add an email
+## 2. Add an email
 
-## Display an email
+## 3. Display an email
 
-## Delete an email
+## 4. Delete an email
 
-## Read/unread option
+## 5. Read/unread option
 

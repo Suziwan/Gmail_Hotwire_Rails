@@ -1,5 +1,5 @@
 document.addEventListener("turbo-load", add_email);
 
 let add_email = function() {
-    document.innerHTML("beforeend", "<%= j render 'body', email: @email %>")
+    document.innerHTML("<%= j render 'email', email: @email %>")
 };

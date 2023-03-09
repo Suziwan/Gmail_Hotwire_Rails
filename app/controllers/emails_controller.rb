@@ -12,8 +12,8 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.new(object: Faker::GreekPhilosophers.name,
-                      body: Faker::GreekPhilosophers.quote)
+    @email = Email.new(object: Faker::Food.dish,
+                      body: Faker::Food.description)
     @email.save
 
     respond_to do |format|

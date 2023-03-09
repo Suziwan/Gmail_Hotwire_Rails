@@ -11,6 +11,6 @@ require 'faker'
 Email.destroy_all
 
 5.times do
-  Email.create!(object: Faker::GreekPhilosophers.name,
-              body: Faker::GreekPhilosophers.quote)
+  Email.create!(object: Faker::Food.dish,
+              body: Faker::Food.description)
 end
