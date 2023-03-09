@@ -1,5 +1,5 @@
 document.addEventListener("turbo-load", add_email);
 
-let add_mail = function() {
+let add_email = function() {
     document.insertAdjacentHTML("beforeend", "<%= j render 'email', email: @email %>")
 };

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "emails#index"
 
-  resources :emails, :except => [:show]
+  resources :emails
 end
