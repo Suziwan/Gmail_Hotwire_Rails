@@ -21,7 +21,7 @@ class EmailsController < ApplicationController
 
     respond_to do |format|
       if @email.save
-        format.html { redirect_to emails_path, notice: 'Nouvel email reçu !' }
+        format.html { redirect_to emails_path, notice: 'New email received!' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -31,7 +31,7 @@ class EmailsController < ApplicationController
   def destroy
     @email = Email.find(params[:id])
     @email.destroy
-    redirect_to emails_path, notice: 'Email supprimé !'
+    redirect_to emails_path, notice: 'Email deleted !'
   end
 
   def toggle
