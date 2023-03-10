@@ -1,2 +1,11 @@
-<h1><%= email.object %></h1>
-<h2><%= email.body %></h2>
+<div class="mb-2">
+  <%= form_with(model: email, class:"form-check-inline") do |form| %>
+    <%= form.check_box :read,
+                       checked: email.read,
+                       data: {
+                        id: email.id,
+                        action: "emails#toggle"
+                       }%>
+  <% end %>
+  <%= link_to "#{email.object}", email_path(email), data: { turbo_frame: "email", turbo_action: "click->emails#toggle" }, class:"text-black text-decoration-none #{"fw-bold" if !email.read}" %>
+</div>

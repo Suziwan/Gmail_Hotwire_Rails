@@ -1,7 +1,8 @@
 <div class="container">
   <br>
-  <div class="list-group" data-turbo-frame=true>
-    <h5><%= @email.object %></h5>
-    <%= @email.body %><br>
-  </div>
+  <turbo-frame id="email">
+    <h2><%= @email.object %></h2>
+    <p><%= @email.body %></p>
+    <%= button_to "Delete", @email, method: :delete, data: { turbo_frame: "_top" }, class:"btn btn-danger" %>
+  </turbo-frame>
 </div>
